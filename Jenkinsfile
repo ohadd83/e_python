@@ -55,7 +55,7 @@ pipeline {
 
                 sleep 3
 
-                curl -f http://localhost:5001
+                sh 'curl -f http://localhost:5001'
 
                 docker stop ${CONTAINER_NAME}-test
                 docker rm ${CONTAINER_NAME}-test
