@@ -51,14 +51,15 @@ pipeline {
                         --name ${CONTAINER_NAME}-test \
                         -p 5001:5000 \
                         ${IMAGE_NAME}:${IMAGE_TAG}
-                '''
+                
 
                 sleep 3
 
-                sh 'curl -f http://localhost:5001'
+                curl -f http://localhost:5001
 
                 docker stop ${CONTAINER_NAME}-test
                 docker rm ${CONTAINER_NAME}-test
+                '''
             }
         }
 
